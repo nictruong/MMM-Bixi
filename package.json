@@ -1,0 +1,19 @@
+{
+	"name": "mmm-bixi",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nictruong/MMM-Bixi.git"
+	},
+	"author": "Nicolas Truong",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/nictruong/MMM-Bixi/issues"
+	},
+	"homepage": "https://github.com/nictruong/MMM-Bixi#readme"
+}
