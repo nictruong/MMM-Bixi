@@ -4,15 +4,16 @@ Module.register('MMM-Bixi', {
 		stations: [334],
 	},
 
-	start: () => {
+	start: function () {
 		Log.log('Starting MMM-Bixi...');
+		console.log('hello world');
 
 		// for (let stationId of this.stations) {
 		// 	this.addStation(stationId);
 		// }
 	},
 
-	getDom: () => {
+	getDom: function () {
 		const wrapper = document.createElement('div');
 		wrapper.innerHTML = 'hello world';
 
@@ -25,7 +26,7 @@ Module.register('MMM-Bixi', {
 	// 	}
 	// },
 
-	addStation: (stationId) => {
+	addStation: function (stationId) {
 		Log.log(`Adding Bixi station id: ${stationId}`);
 
 		this.sendSocketNotification('STATION_STATUS', {
