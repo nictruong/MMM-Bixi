@@ -3,7 +3,7 @@ const BIXIFetcher = require('./helpers/BIXIFetcher');
 
 module.exports = NodeHelper.create({
 	start() {
-		console.log(`Starting node helper for: ${this.name}`);
+		Log.log(`Starting node helper for: ${this.name}`);
 	},
 
 	socketNotificationsReceived(notification, payload) {

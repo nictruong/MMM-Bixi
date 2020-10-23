@@ -5,7 +5,7 @@ Module.register('MMM-Bixi', {
 	},
 
 	start: () => {
-		console.log('Starting MMM-Bixi...');
+		Log.log('Starting MMM-Bixi...');
 
 		// for (let stationId of this.stations) {
 		// 	this.addStation(stationId);
@@ -21,12 +21,12 @@ Module.register('MMM-Bixi', {
 
 	// socketNotificationReceived: (notification, payload) => {
 	// 	if (notification === 'BIXI_EVENT') {
-	// 		console.log(payload);
+	// 		Log(payload);
 	// 	}
 	// },
 
 	// addStation: (stationId) => {
-	// 	console.log(`Adding Bixi station id: ${stationId}`);
+	// 	Log(`Adding Bixi station id: ${stationId}`);
 
 	// 	this.sendSocketNotification('STATION_STATUS', {
 	// 		stationId,
