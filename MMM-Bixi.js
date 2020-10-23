@@ -5,6 +5,8 @@ Module.register('MMM-Bixi', {
 	},
 
 	start: () => {
+		console.log('Starting MMM-Bixi...');
+
 		for (let stationId of this.stations) {
 			this.addStation(stationId);
 		}
