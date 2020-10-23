@@ -7,9 +7,9 @@ Module.register('MMM-Bixi', {
 	start: () => {
 		console.log('Starting MMM-Bixi...');
 
-		for (let stationId of this.stations) {
-			this.addStation(stationId);
-		}
+		// for (let stationId of this.stations) {
+		// 	this.addStation(stationId);
+		// }
 	},
 
 	getDom: () => {
@@ -19,18 +19,18 @@ Module.register('MMM-Bixi', {
 		return wrapper;
 	},
 
-	socketNotificationReceived: (notification, payload) => {
-		if (notification === 'BIXI_EVENT') {
-			console.log(payload);
-		}
-	},
+	// socketNotificationReceived: (notification, payload) => {
+	// 	if (notification === 'BIXI_EVENT') {
+	// 		console.log(payload);
+	// 	}
+	// },
 
-	addStation: (stationId) => {
-		console.log(`Adding Bixi station id: ${stationId}`);
+	// addStation: (stationId) => {
+	// 	console.log(`Adding Bixi station id: ${stationId}`);
 
-		this.sendSocketNotification('STATION_STATUS', {
-			stationId,
-			interval: this.interva,
-		});
-	},
+	// 	this.sendSocketNotification('STATION_STATUS', {
+	// 		stationId,
+	// 		interval: this.interva,
+	// 	});
+	// },
 });
