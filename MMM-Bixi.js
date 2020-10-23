@@ -6,23 +6,36 @@ Module.register('MMM-Bixi', {
 
 	start: function () {
 		Log.log('Starting MMM-Bixi...');
-		console.log('hello world');
 
 		for (let stationId of this.stations) {
 			this.addStation(stationId);
 		}
+
+		this.stationData = {};
 	},
 
 	getDom: function () {
 		const wrapper = document.createElement('div');
-		wrapper.innerHTML = 'hello world';
+
+		if (Object.keys(this.stationData).length) {
+			for (let stationId in this.stationData) {
+				const stationElement = document.createElement('div');
+				stationElement.innerHTML = stationId;
+
+				wrapper.appendChild(stationElement);
+			}
+		} else {
+			wrapper.innerHTML = 'hello world';
+		}
 
 		return wrapper;
 	},
 
 	socketNotificationReceived: (notification, payload) => {
 		if (notification === 'BIXI_EVENT') {
-			Log(payload);
+			Log.log(payload);
+			this.stationData[payload.station_id] = payload;
+			this.updateDom();
 		}
 	},
 

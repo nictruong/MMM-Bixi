@@ -6,7 +6,7 @@ module.exports = NodeHelper.create({
 		console.log(`Starting node helper for: ${this.name}`);
 	},
 
-	socketNotificationsReceived(notification, payload) {
+	socketNotificationReceived(notification, payload) {
 		const stationId = payload.stationId;
 		const interval = payload.interval;
 		console.log(notification);
