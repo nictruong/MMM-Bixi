@@ -9,6 +9,7 @@ module.exports = NodeHelper.create({
 	socketNotificationsReceived(notification, payload) {
 		const stationId = payload.stationId;
 		const interval = payload.interval;
+		console.log(notification);
 		if (notification === 'STATION_STATUS') {
 			const bixiFetcher = new BIXIFetcher(stationId, interval);
 			bixiFetcher.on(stationId, (stationStatus) => {
