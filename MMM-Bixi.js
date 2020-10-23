@@ -25,12 +25,12 @@ Module.register('MMM-Bixi', {
 	// 	}
 	// },
 
-	// addStation: (stationId) => {
-	// 	Log(`Adding Bixi station id: ${stationId}`);
+	addStation: (stationId) => {
+		Log.log(`Adding Bixi station id: ${stationId}`);
 
-	// 	this.sendSocketNotification('STATION_STATUS', {
-	// 		stationId,
-	// 		interval: this.interva,
-	// 	});
-	// },
+		this.sendSocketNotification('STATION_STATUS', {
+			stationId,
+			interval: this.interva,
+		});
+	},
 });
