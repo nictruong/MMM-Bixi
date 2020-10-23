@@ -15,5 +15,8 @@
 	"bugs": {
 		"url": "https://github.com/nictruong/MMM-Bixi/issues"
 	},
-	"homepage": "https://github.com/nictruong/MMM-Bixi#readme"
+	"homepage": "https://github.com/nictruong/MMM-Bixi#readme",
+	"dependencies": {
+		"node-fetch": "^2.6.1"
+	}
 }
