@@ -6,19 +6,19 @@ MMM-Bixi is a Magic Mirror module for displaying bicycle and electric bicycle av
 
 Remote to your raspberry pi and navigate to your Magic Mirror modules folder
 
-```
+```bash
 cd ~/MagicMirror/modules
 ```
 
 Clone the MMM-Bixi repository
 
-```
+```bash
 git clone https://github.com/nictruong/MMM-Bixi.git
 ```
 
 Go to the MMM-Bixi module and install dependencies
 
-```
+```bash
 cd MMM-Bixi
 npm install
 ```
