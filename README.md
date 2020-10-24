@@ -1,6 +1,8 @@
 # MMM-Bixi
 
-MMM-Bixi is a Magic Mirror module for displaying bicycle and electric bicycle availabilities of any station in the Bixi network in Montreal. Simply add a station's id and an optional display name for each station you want to monitor. It gets data from the [Bixi open data page](https://www.bixi.com/en/page-27)
+MMM-Bixi is a [Magic Mirror module](https://magicmirror.builders/) for displaying bicycle and electric bicycle availabilities of any station in the Bixi network in Montreal. Simply add a station's id and an optional display name for each station you want to monitor. It gets data from the [Bixi open data page](https://www.bixi.com/en/page-27).
+
+![example](/screenshot.png)
 
 ## Installation
 
@@ -48,6 +50,6 @@ Add the following configs to the Magic Mirror configs file
 
 MMM-Bixi is configurable by simply changing the MMM-Bixi entry in the Magic Mirror configs file.
 
-The *interval* controls the interval in seconds between refreshes.
+The **interval** controls the interval in seconds between refreshes.
 
-Station *ids* can be find [here](https://api-core.bixi.com/gbfs/en/station_information.json). *Display name* is optional.
+Station **ids** can be found [here](https://api-core.bixi.com/gbfs/en/station_information.json). **Display name** is optional.
