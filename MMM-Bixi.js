@@ -6,9 +6,11 @@ Module.register("MMM-Bixi", {
 
     showBikes: true,
     showEBikes: true,
+    showTotal: false,
 
     bikeIcon: "bicycle",
-    eBikeIcon: "bolt"
+    eBikeIcon: "bolt",
+    totalIcon: "bicycle"
   },
 
   start: function () {
@@ -34,14 +36,20 @@ Module.register("MMM-Bixi", {
     const headerStationCol = document.createElement("th");
     const headerBikesCol = this.createHeaderColumn(this.config.bikeIcon);
     const headerEBikesCol = this.createHeaderColumn(this.config.eBikeIcon);
+    const headerTotalCol = this.createHeaderColumn(this.config.totalIcon);
 
     headerRow.appendChild(headerStationCol);
+
     if (this.config.showBikes) {
       headerRow.appendChild(headerBikesCol);
     }
 
     if (this.config.showEBikes) {
       headerRow.appendChild(headerEBikesCol);
+    }
+
+    if (this.config.showTotal) {
+      headerRow.appendChild(headerTotalCol);
     }
 
     wrapper.appendChild(headerRow);
@@ -56,13 +64,16 @@ Module.register("MMM-Bixi", {
           : station.id;
 
         const bikesCol = this.createBodyColumn(
-          station.id,
-          "num_bikes_available"
+          this.stationData[station.id]["num_bikes_available"]
         );
 
         const eBikesCol = this.createBodyColumn(
-          station.id,
-          "num_ebikes_available"
+          this.stationData[station.id]["num_ebikes_available"]
+        );
+
+        const totalCol = this.createBodyColumn(
+          this.stationData[station.id]["num_bikes_available"] +
+            this.stationData[station.id]["num_ebikes_available"]
         );
 
         stationRow.appendChild(stationCol);
@@ -72,6 +83,10 @@ Module.register("MMM-Bixi", {
 
         if (this.config.showEBikes) {
           stationRow.appendChild(eBikesCol);
+        }
+
+        if (this.config.showTotal) {
+          stationRow.appendChild(totalCol);
         }
 
         wrapper.appendChild(stationRow);
@@ -116,10 +131,10 @@ Module.register("MMM-Bixi", {
     return headerCol;
   },
 
-  createBodyColumn: function (id, type) {
+  createBodyColumn: function (data) {
     const bikesCol = document.createElement("td");
     bikesCol.setAttribute("align", "right");
-    bikesCol.innerHTML = this.stationData[id][type];
+    bikesCol.innerHTML = data;
 
     return bikesCol;
   }
