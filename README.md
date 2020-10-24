@@ -28,18 +28,18 @@ Add the following configs to the Magic Mirror configs file
 ```
 ...
 {
-			module: "MMM-Bixi",
-			config: {
-				interval: 20,
-    			stations: [
-					{ id: 334, displayName: "Jarry / Gounod" }, 
-					{ id: 67, displayName: "University / Milton" }
-				],
-				showBikes: true,
-				showEBikes: true,
+    module: "MMM-Bixi",
+    config: {
+        interval: 60,
+        stations: [
+            { id: 334, displayName: "Jarry / Gounod" }, 
+            { id: 67, displayName: "University / Milton" }
+        ],
+        showBikes: true,
+        showEBikes: true,
         showTotal: false,
-			},
-			position: 'top_left'
+    },
+    position: 'top_left'
 }
 ...
 ```
