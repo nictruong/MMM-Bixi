@@ -2,9 +2,8 @@ const fetch = require("node-fetch");
 const EventEmitter = require("events");
 
 class BIXIFetcher extends EventEmitter {
-  constructor(stationId, interval) {
+  constructor(interval) {
     super();
-    this.stationId = stationId;
     this.interval = interval;
   }
 
@@ -14,17 +13,8 @@ class BIXIFetcher extends EventEmitter {
   }
 
   async poll() {
-    console.log(this.stationId);
-    const stationStatus = await this.getStationStatus(this.stationId);
-    console.log(stationStatus);
-    this.emit(this.stationId, stationStatus);
-  }
-
-  async getStationStatus(stationId) {
     const stationStatuses = await this.getStationStatuses();
-    return stationStatuses.data.stations.find(
-      (station) => station.station_id == stationId
-    );
+    this.emit("BIXI", stationStatuses);
   }
 
   async getStationStatuses() {
