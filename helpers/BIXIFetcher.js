@@ -18,15 +18,19 @@ class BIXIFetcher extends EventEmitter {
   }
 
   async getStationStatuses() {
-    const url = "https://api-core.bixi.com/gbfs/en/station_status.json";
-    const res = await fetch(url, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json"
-      }
-    });
+    try {
+      const url = "https://api-core.bixi.com/gbfs/en/station_status.json";
+      const res = await fetch(url, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
 
-    return await res.json();
+      return await res.json();
+    } catch (e) {
+      console.error(e);
+    }
   }
 }
 
