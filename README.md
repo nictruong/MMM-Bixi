@@ -50,6 +50,6 @@ Add the following configs to the Magic Mirror configs file
 
 MMM-Bixi is configurable by simply changing the MMM-Bixi entry in the Magic Mirror configs file.
 
-The *interval* controls the interval in seconds between refreshes.
+The **interval** controls the interval in seconds between refreshes.
 
-Station *ids* can be find [here](https://api-core.bixi.com/gbfs/en/station_information.json). *Display name* is optional.
+Station **ids** can be found [here](https://api-core.bixi.com/gbfs/en/station_information.json). **Display name** is optional.
