@@ -19,7 +19,7 @@ class BIXIFetcher extends EventEmitter {
 
   async getStationStatuses() {
     try {
-      const url = "https://api-core.bixi.com/gbfs/en/station_status.json";
+      const url = "https://gbfs.velobixi.com/gbfs/en/station_status.json";
       const res = await fetch(url, {
         method: "GET",
         headers: {
